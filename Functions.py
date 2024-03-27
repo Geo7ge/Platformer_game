@@ -4,11 +4,9 @@ from os import listdir
 from os.path import isfile, join
 
 from main import TIMER_FONT, TEXT_FONT_1, TEXT_FONT_2
-# from Classes import StartPoint, EndPoint, CheckPoint, Player, Fire, Heart, Coin, Saw, Block
-# from Classes import StartPoint
 
 FPS = 60
-WIDHT, HEIGHT = 1000, 800
+WIDTH, HEIGHT = 1000, 800
 PLAYER_VEL = 5
 block_size = 96
 
@@ -63,7 +61,7 @@ def get_background(name):
     _, _, width, height = image.get_rect()
     tiles = []
 
-    for i in range(WIDHT // width + 1):
+    for i in range(WIDTH // width + 1):
         for j in range(HEIGHT // height + 1):
             pos = (i * width, j * height)
             tiles.append(pos)
@@ -97,6 +95,8 @@ def draw(window, background, bg_image, player, objects, offset_x,
     window.blit(coin_image.image, (120, 30))
 
     window.blit(formatted_start_timer, (900, 10))
+
+
 
     pygame.display.update()
 
